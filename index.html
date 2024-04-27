@@ -10,15 +10,15 @@
 <body>
   <!-- DIV que será manipulada -->
   <div id="manipula">
-    <p>Com base nos argumentos apresentados na aula, é possivel entender que uma coisa é uma coisa e outra coisa é outra coisa, admito que não concordo nem discordo, muito pelo contrário.
+    <p class="paragrafo"> Com base nos argumentos apresentados na aula, é possivel entender que uma coisa é uma coisa e outra coisa é outra coisa, admito que não concordo nem discordo, muito pelo contrário.
     </p>
-    <p class="paragrafo">É factivel que a Terra é um dos planetas mais conhecidos do mundo, mesmo sabendo que a vida é uma sucessão de sucessivos que sucedem sucessivamente sem cessar.Agora, mais do que nunca, é a hora, afinal, o importante é o que importa, pois onde quer que você esteja, você sempre estará lá.
+    <p class="paragrafo"> É factivel que a Terra é um dos planetas mais conhecidos do mundo, mesmo sabendo que a vida é uma sucessão de sucessivos que sucedem sucessivamente sem cessar.Agora, mais do que nunca, é a hora, afinal, o importante é o que importa, pois onde quer que você esteja, você sempre estará lá.
     </p>
   </div>
   <!-- FIM da DIV que foi manipulada -->
 
 
-  <h2 class=""> Altere o Texto acima clicando nos botões</h2>
+  <h2 class="chamada"> Altere o Texto acima clicando nos botões</h2>
 
 
   <!-- DIV que armazenará todos os botões -->
@@ -56,27 +56,27 @@
     <!-- Botão 11 -Não  -->
     <input type="button" value="Não" onclick="nao()"/>
     <!--Fim Botão 11-->
-    <!-- Botão X - -->
-    <input type="button" value="X" />
-    <!--Fim Botão X-->
-    <!-- Botão X - -->
-    <input type="button" value="X" />
-    <!--Fim Botão X-->
-    <!-- Botão X - -->
-    <input type="button" value="X" />
-    <!--Fim Botão X-->
-    <!-- Botão X - -->
-    <input type="button" value="X" />
-    <!--Fim Botão X-->
-    <!-- Botão X - -->
-    <input type="button" value="X" />
-    <!--Fim Botão X-->
-    <!-- Botão X - -->
-    <input type="button" value="X" />
-    <!--Fim Botão X-->
-    <!-- Botão X - -->
-    <input type="button" value="X" />
-    <!--Fim Botão X-->
+    <!-- Botão 12 - mudar a cor do background do paragrafo-->
+    <input type="button" value="back paragrafo" onclick="background()" />
+    <!--Fim Botão 12-->
+    <!-- Botão 13 - Cor do botao -->
+    <input type="button" value="cor botao" onclick="mudacorbotao()"/>
+    <!--Fim Botão 13-->
+    <!-- Botão 14 - mudar cor todos os botoes -->
+    <input type="button" value="cor botao" onclick="mudarcorbotoes()"/>
+    <!--Fim Botão 14-->
+    <!-- Botão 15 - conta botao-->
+    <input type="button" value="conta" onclick="contabotao()"/>
+    <!--Fim Botão 15-->
+    <!-- Botão 16 - censura botao -->
+    <input type="button" value="censura" onclick="censura()"/>
+    <!--Fim Botão 16-->
+    <!-- Botão 17 - mudar o fundo-->
+    <input type="button" value="fundo black" onclick="fundo()"/>
+    <!--Fim Botão 17-->
+    <!-- Botão 18 - imagem -->
+    <input type="button" value="se formar no senai" onclick="seformarnosenai()" />
+    <!--Fim Botão 18-->
 
   </div>
   <!-- FIM da DIV que armazena todos os botões -->
@@ -134,32 +134,49 @@
     function nao() {
       document.getElementsByClassName("chamada")[0].innerHTML = "Neste Botão Não"
     }
-    //fim do Botão X
-    // Botão X - xx
-    function x() {
-
+    //fim do Botão 11
+    // Botão 12 - Mudar cor do background
+    function background() {
+      document.getElementById("manipula").getElementsByClassName("paragrafo")[0].style.backgroundColor = "red"
     }
-    //fim do Botão X
-    // Botão X - xx
-    function x() {
-
+    //fim do Botão 12
+    // Botão 13 - Cor do botao
+    function mudacorbotao() {
+      document.getElementsByTagName("input")[12].style.backgroundColor = "lightblue"
     }
-    //fim do Botão X
-    // Botão X - xx
-    function x() {
-
+    //fim do Botão 13
+    // Botão 14 - mudar a cor todos os botoes
+    function mudarcorbotoes() {
+      var x = document.getElementById("botoes")
+      var y = x.getElementsByTagName("input")
+      var i
+      for(i = 0; i < y.length; i++){
+      y[i].style.backgroundColor = "purple"
+      }
     }
-    //fim do Botão X
-    // Botão X - xx
-    function x() {
-
+    //fim do Botão 14
+    // Botão 15 - conta botao
+    function contabotao() {
+      let x = document.getElementById("botoes").getElementsByTagName("input")
+      document.getElementById("manipula").innerHTML = x.length
     }
-    //fim do Botão X
-    // Botão X - xx
-    function x() {
-
+    //fim do Botão 15
+    // Botão 16 - censura
+    function censura() {
+      document.querySelector("p.paragrafo").innerHTML = "********"
     }
-//fim do Botão X
+//fim do Botão 16
+    // Botão 17 - trocar backgroung
+    function fundo() {
+      document.querySelector("body").style.background = "black"
+    }
+//fim do Botão 17
+    // Botão 18 - seformarnosenai
+    function seformarnosenai() {
+      var img = document.querySelector("#image")
+      img.setAttribute("src" , "alien.jpg")
+    }
+//fim do Botão 18
   </script> <!-- Termina a brincadeira com JS -->
 
   <br>
